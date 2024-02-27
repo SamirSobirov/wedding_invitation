@@ -1,28 +1,28 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var countDownDate = new Date("June 22, 2024 00:00:00").getTime();
+function addLeadingZero(number) {
+    return number < 10 ? '0' + number : number;
+  }
 
-    var x = setInterval(function () {
-        var now = new Date().getTime();
+  // Функция для обратного отсчета до 13 июня
+  function countdown() {
+    var endDate = new Date("2024-06-13T00:00:00"); // Установите дату окончания отсчета
+    var currentDate = new Date();
 
-        var distance = countDownDate - now;
+    var totalSeconds = Math.floor((endDate - currentDate) / 1000);
 
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var days = Math.floor(totalSeconds / (3600 * 24));
+    var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+    var minutes = Math.floor((totalSeconds % 3600) / 60);
+    var seconds = Math.floor(totalSeconds % 60);
 
+    // Обновление элементов на странице
+    document.getElementById("day").innerText = addLeadingZero(days);
+    document.getElementById("hour").innerText = addLeadingZero(hours);
+    document.getElementById("minut").innerText = addLeadingZero(minutes);
+    document.getElementById("second").innerText = addLeadingZero(seconds);
 
-        document.getElementById("day").innerHTML = days;
-        document.getElementById("hour").innerHTML = hours;
-        document.getElementById("minut").innerHTML = minutes;
-        document.getElementById("second").innerHTML = seconds;
+    // Обновление каждую секунду
+    setTimeout(countdown, 1000);
+  }
 
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("day").innerHTML = "00";
-            document.getElementById("hour").innerHTML = "00";
-            document.getElementById("minut").innerHTML = "00";
-            document.getElementById("second").innerHTML = "00";
-        }
-    }, 1000);
-});
+  // Запуск функции обратного отсчета при загрузке страницы
+  countdown();
