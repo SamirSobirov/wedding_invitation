@@ -28,5 +28,3 @@ function addLeadingZero(number) {
   countdown();
 
 
-
-  alert('hello Voris')
