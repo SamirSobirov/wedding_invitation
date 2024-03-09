@@ -26,3 +26,7 @@ function addLeadingZero(number) {
 
   // Запуск функции обратного отсчета при загрузке страницы
   countdown();
+
+
+
+  alert('hello Voris')
