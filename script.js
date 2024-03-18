@@ -1,36 +1,24 @@
-function addLeadingZero(number) {
-    return number < 10 ? '0' + number : number;
-  }
+const endDate = new Date('June 15, 2024 18:00:00').getTime();
 
-  // Функция для обратного отсчета до 13 июня
-  function countdown() {
-    var endDate = new Date("2024-06-13T00:00:00"); // Установите дату окончания отсчета
-    var currentDate = new Date();
+// Функция для обновления счетчика каждую секунду
+const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = endDate - now; 
 
-    var totalSeconds = Math.floor((endDate - currentDate) / 1000);
-
-    var days = Math.floor(totalSeconds / (3600 * 24));
-    var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-    var minutes = Math.floor((totalSeconds % 3600) / 60);
-    var seconds = Math.floor(totalSeconds % 60);
-
-    // Обновление элементов на странице
-    document.getElementById("day").innerText = addLeadingZero(days);
-    document.getElementById("hour").innerText = addLeadingZero(hours);
-    document.getElementById("minut").innerText = addLeadingZero(minutes);
-    document.getElementById("second").innerText = addLeadingZero(seconds);
-
-    // Обновление каждую секунду
-    setTimeout(countdown, 1000);
-  }
-
-  // Запуск функции обратного отсчета при загрузке страницы
-  countdown();
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 
+    document.getElementById('day').innerText = days < 10 ? `0${days}` : days;
+    document.getElementById('hour').innerText = hours < 10 ? `0${hours}` : hours;
+    document.getElementById('minut').innerText = minutes < 10 ? `0${minutes}` : minutes;
+    document.getElementById('second').innerText = seconds < 10 ? `0${seconds}` : seconds;
+};
 
 
-  
+setInterval(updateCountdown, 1000);
 
 
-
+updateCountdown();
