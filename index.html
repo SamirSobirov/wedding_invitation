@@ -14,39 +14,40 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<script src="https://cdn.tailwindcss.com"></script>
 	<title>Invitation</title>
-	<script type="module" crossorigin src="/assets/index-b9a8196d.js"></script>
+	
 	<link rel="stylesheet" href="./index.css">
 </head>
 
 <body class="relative max-w-[1000px] m-auto">
 
 	<div>
-		<div class="" id="auido_header">
+		<div class="border-none h-0" id="auido_header">
 
-			<img src="https://fabulous-yeot-d53a3d.netlify.app/musicController.svg" id="music_controller"
+			
+			
+
+			<img src="https://fabulous-yeot-d53a3d.netlify.app/musicController.svg"
 				class="fixed top-7 right-7 w-[10%]" alt="">
 
 			<button class="btn_audio">
-				<div class="animate-ping fixed top-7 right-7 p-[5%] rounded-full bg-[#ffff00d1] z-10"></div>
+				<audio controls autoplay id="player">
+					<source src="./img/bratya-shahunc-dva-serdca_(zzz.fm).mp3">
+				  </audio>
+				<div class="animate-ping fixed top-7 right-7 p-[5%] rounded-full bg-[#ffff00d1] z-10"  ></div>
 			</button>
 		</div>
 
 
-		<div>
-			<audio id="player" controls autoplay>
-				<source src="./img/bratya-shahunc-dva-serdca_(zzz.fm).mp3">
-			</audio>
-		</div>
-
-
+		
+		<!-- <script>
+			window.onload = function() {
+				var audio = document.getElementById("player");
+				audio.play();
+			}
+			</script> -->
 
 
 		<style>
-			#auido_header {
-				border: none;
-				height: 0px;
-			}
-
 			#music_controller {
 				z-index: 1;
 			}
@@ -64,7 +65,7 @@
 			const button = document.querySelector('button');
 			const audioPlayer = document.getElementById('player');
 
-			let isPlaying = false;
+			let isPlaying
 
 			button.addEventListener('click', () => {
 				if (isPlaying) {
