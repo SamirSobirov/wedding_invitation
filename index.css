@@ -13,6 +13,20 @@ body {
     background-color: #082c2b
 }
 
+
+#music_controller {
+    z-index: 1;
+}
+
+.btn_audio {
+    border: none;
+}
+
+#player {
+    display: none;
+}
+
+
 .tobottom_icon {
     filter: invert(100%);
     margin: 10px auto;

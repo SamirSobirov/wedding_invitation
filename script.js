@@ -22,3 +22,20 @@ setInterval(updateCountdown, 1000);
 
 
 updateCountdown();
+
+
+
+const button = document.querySelector('button');
+const audioPlayer = document.getElementById('player');
+
+let isPlaying
+
+button.addEventListener('click', () => {
+    if (isPlaying) {
+        audioPlayer.pause();
+        isPlaying = false;
+    } else {
+        audioPlayer.play();
+        isPlaying = true;
+    }
+});
