@@ -5,6 +5,12 @@
     font-family: Merriweather
 }
 
+@media (max-width: 375px) {
+    #music_group_h5.h1_text {
+        font-size: 1.75rem;
+        margin-top: 200px; /* Moves the element down by 200px */
+    }
+}
 html,body {
     width: 100%
 }
