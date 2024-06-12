@@ -7,13 +7,18 @@
 
 @media (max-width: 430px) {
     #music_group_h5.h1_text {
-        margin-bottom: 430px;
+        margin-bottom: 600px;
     }
 }
 
 @media (max-width: 390px) {
     #music_group_h5.h1_text {
         margin-bottom: 180px;
+    }
+}
+@media (max-width: 375px) {
+    #music_group_h5.h1_text {
+        margin-bottom: 120px;
     }
 }
 
@@ -25,7 +30,7 @@
 
 @media (max-width: 414px) {
     #music_group_h5.h1_text {
-        margin-bottom: 380px;
+        margin-bottom: 550px;
     }
 }
 
