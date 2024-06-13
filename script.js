@@ -39,3 +39,24 @@ button.addEventListener('click', () => {
         isPlaying = true;
     }
 });
+
+
+
+
+
+// tailwind
+// module.exports = {
+//     theme: {
+//       extend: {
+//         screens: {
+//           'xs': '375px',
+//         },
+//         fontSize: {
+//           '2px': '2px',
+//         },
+//       },
+//     },
+//     variants: {},
+//     plugins: [],
+//   }
+  
