@@ -1,4 +1,4 @@
-const endDate = new Date('June 15, 2024 18:00:00').getTime();
+const endDate = new Date('September 15, 2024 18:00:00').getTime();
 
 // Функция для обновления счетчика каждую секунду
 const updateCountdown = () => {
